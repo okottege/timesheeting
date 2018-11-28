@@ -1,4 +1,9 @@
 ﻿@page "/"
+@using System.Reflection
+@{
+    var asm = Assembly.GetExecutingAssembly();
+    var runtime = asm.GetCustomAttribute<AssemblyFileVersionAttribute>();
+}
 
 <h1>Timesheeting</h1>
 
@@ -7,3 +12,6 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 <Counter CountIncrement="10" />
 <Counter CountIncrement="20" />
+
+<span><strong>Version: @runtime.Version</strong>
+</span>

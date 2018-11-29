@@ -1,0 +1,16 @@
+﻿@page "/employees"
+@using Timesheeting.Client.UI.ViewModels
+@inject HttpClient http
+
+<h1>Employees</h1>
+<p>The employees of the organisation</p>
+
+@functions
+{
+    EmployeeListItem[] employees;
+
+    protected override async Task OnInitAsync()
+    {
+
+    }
+}

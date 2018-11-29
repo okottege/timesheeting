@@ -1,4 +1,9 @@
+@using System.Reflection
 @inherits BlazorLayoutComponent
+@{
+    var asm = Assembly.GetExecutingAssembly();
+    var runtime = asm.GetCustomAttribute<AssemblyFileVersionAttribute>();
+}
 
 <div class="sidebar">
     <NavMenu />
@@ -11,5 +16,11 @@
 
     <div class="content px-4">
         @Body
+    </div>
+    
+    <div>
+        <p>
+            Version: @runtime.Version
+        </p>
     </div>
 </div>
